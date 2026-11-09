@@ -174,7 +174,7 @@ Quem ativa "reduzir movimento" no sistema vê todas as animações desligadas.
 | 04 | Negócios | AF Negócios Imobiliários | afnegociosimobiliarios.lovable.app |
 | 05 | Negócios | 3D Max | suaminiatura3d.lovable.app |
 | 06 | Cursos | Fábrica de Apps com IA *(Em breve)* | pay.kiwify.com.br |
-| 07 | Cursos | E-commerce do Zero | ecommercedozero.online |
+| 07 | Cursos | E-commerce do Zero | pgecommercedozero.vercel.app |
 | 08 | Cursos | Curso de Impressão 3D | udemy.com |
 | 09 | Cursos | Engenharia das Apostas *(+18)* | engenhariadasapostas.online |
 | 10 | Cursos | Meus livros | amazon.com.br |

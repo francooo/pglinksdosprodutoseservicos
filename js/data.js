@@ -58,7 +58,7 @@ const L = [
 
   // Cursos
   {t:'Fábrica de Apps com IA', d:'Aprenda a criar aplicativos usando inteligência artificial.', u:'https://pay.kiwify.com.br/qhMfSrt', c:'cursos', i:'spark', tag:'Em breve'},
-  {t:'E-commerce do Zero', d:'Venha aprender a criar o seu e-commerce.', u:'https://ecommercedozero.online/', c:'cursos', i:'store'},
+  {t:'E-commerce do Zero', d:'Venha aprender a criar o seu e-commerce.', u:'https://pgecommercedozero.vercel.app/', c:'cursos', i:'store'},
   {t:'Curso de Impressão 3D', d:'Curso completo de impressão 3D na Udemy.', u:'https://www.udemy.com/course/curso-completo-de-impressao-3d/?referralCode=952497D062E46F1B9AB2', c:'cursos', i:'cube'},
   {t:'Engenharia das Apostas', d:'Aprenda a fazer apostas esportivas.', u:'https://engenhariadasapostas.online/', c:'cursos', i:'ball', tag:'+18'},
   {t:'Meus livros', d:'Livros, biografia e lançamentos na Amazon.', u:'https://www.amazon.com.br/stores/author/B0H7TNJ82Q', c:'cursos', i:'book'},
