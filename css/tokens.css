@@ -1,0 +1,33 @@
+/* Andrews Franco · Stories — design tokens */
+:root{
+  /* Cores */
+  --s-bg:#1a2ef0;      /* Fundo principal (azul cobalto) */
+  --s-deep:#0f1ca8;    /* Azul profundo: gradientes */
+  --s-ink:#0b0f2e;     /* Tinta: rodapé, texto sobre amarelo, miolo dos círculos */
+  --s-fg:#ffffff;      /* Texto principal sobre azul */
+  --s-muted:#c9d0ff;   /* Texto secundário sobre azul */
+  --s-hi:#ffe14d;      /* Destaque amarelo: tags, títulos de seção, hover, faixa */
+  --s-pink:#ff6b9a;    /* Segunda cor do anel dos stories */
+  --s-line:rgba(255,255,255,.25); /* Divisórias da lista */
+  --foot-muted:#aab3e8; --foot-link:#d8dcf5; --foot-line:#262c5e;
+
+  /* Gradientes por categoria (fundo do story) */
+  --cat-negocios:linear-gradient(160deg,#2f5dff,#0f1ca8);
+  --cat-cursos:linear-gradient(160deg,#ff9f1a,#d65a00);
+  --cat-conteudo:linear-gradient(160deg,#ff4f81,#a3164a);
+  --cat-lojas:linear-gradient(160deg,#16b08f,#06624f);
+
+  /* Tipografia */
+  --s-display:"Big Shoulders Display",Impact,"Arial Narrow",sans-serif; /* 700 / 900, sempre em CAIXA ALTA */
+  --s-body:"DM Sans",system-ui,sans-serif;                              /* 400 / 500 / 700 */
+
+  /* Raios */
+  --r-sm:6px; --r-md:10px; --r-lg:14px; --r-xl:24px; --r-pill:999px;
+
+  /* Espaçamento */
+  --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:24px; --sp-6:40px; --sp-7:56px;
+
+  /* Movimento */
+  --ease-out:cubic-bezier(.2,.9,.3,1.1); --ease-fill:cubic-bezier(.7,0,.2,1);
+  --story-duration:5000ms;
+}
