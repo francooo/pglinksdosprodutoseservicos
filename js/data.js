@@ -54,7 +54,7 @@ const L = [
   {t:'Linx · AF ecomm credenciada', d:'Parceria oficial com a Linx Commerce para a sua loja.', u:'https://lp.linxcommerce.com.br/lp-parcerias-afecomm', c:'negocios', i:'badge'},
   {t:'ConsultaPsi', d:'Gestão para clínicas de psicologia.', u:'https://pgconsultapsi.vercel.app/', c:'negocios', i:'chat'},
   {t:'AF Negócios Imobiliários', d:'Portal de imóveis.', u:'https://afnegociosimobiliarios.lovable.app/', c:'negocios', i:'home'},
-  {t:'3D Max', d:'Transforme sua foto em uma miniatura 3D incrível.', u:'https://suaminiatura3d.lovable.app', c:'negocios', i:'cube'},
+  {t:'3D Max', d:'Transforme sua foto em uma miniatura 3D incrível.', u:'https://suaminiatura3d.vercel.app/', c:'negocios', i:'cube'},
 
   // Cursos
   {t:'Fábrica de Apps com IA', d:'Aprenda a criar aplicativos usando inteligência artificial.', u:'https://pay.kiwify.com.br/qhMfSrt', c:'cursos', i:'spark', tag:'Em breve'},

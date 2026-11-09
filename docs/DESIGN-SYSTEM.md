@@ -172,7 +172,7 @@ Quem ativa "reduzir movimento" no sistema vê todas as animações desligadas.
 | 02 | Negócios | Linx · AF ecomm credenciada | lp.linxcommerce.com.br |
 | 03 | Negócios | ConsultaPsi | pgconsultapsi.vercel.app |
 | 04 | Negócios | AF Negócios Imobiliários | afnegociosimobiliarios.lovable.app |
-| 05 | Negócios | 3D Max | suaminiatura3d.lovable.app |
+| 05 | Negócios | 3D Max | suaminiatura3d.vercel.app |
 | 06 | Cursos | Fábrica de Apps com IA *(Em breve)* | pay.kiwify.com.br |
 | 07 | Cursos | E-commerce do Zero | pgecommercedozero.vercel.app |
 | 08 | Cursos | Curso de Impressão 3D | udemy.com |
