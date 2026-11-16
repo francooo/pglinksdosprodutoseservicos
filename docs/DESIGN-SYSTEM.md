@@ -168,7 +168,7 @@ Quem ativa "reduzir movimento" no sistema vê todas as animações desligadas.
 
 | # | Categoria | Item | Destino |
 | --- | --- | --- | --- |
-| 01 | Negócios | AF ecomm | afecomm.com.br |
+| 01 | Negócios | AF ecomm | afnegociosdigitais.vercel.app |
 | 02 | Negócios | Linx · AF ecomm credenciada | lp.linxcommerce.com.br |
 | 03 | Negócios | ConsultaPsi | pgconsultapsi.vercel.app |
 | 04 | Negócios | AF Negócios Imobiliários | afnegociosimobiliarios.lovable.app |

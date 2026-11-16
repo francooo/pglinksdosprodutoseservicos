@@ -50,7 +50,7 @@ const CATS = [
 /* Os 17 links */
 const L = [
   // Negócios
-  {t:'AF ecomm', d:'Transformando negócios com tecnologia: e-commerce do planejamento à operação.', u:'https://afecomm.com.br/', c:'negocios', i:'cart'},
+  {t:'AF ecomm', d:'Transformando negócios com tecnologia: e-commerce do planejamento à operação.', u:'https://afnegociosdigitais.vercel.app/', c:'negocios', i:'cart'},
   {t:'Linx · AF ecomm credenciada', d:'Parceria oficial com a Linx Commerce para a sua loja.', u:'https://lp.linxcommerce.com.br/lp-parcerias-afecomm', c:'negocios', i:'badge'},
   {t:'ConsultaPsi', d:'Gestão para clínicas de psicologia.', u:'https://pgconsultapsi.vercel.app/', c:'negocios', i:'chat'},
   {t:'AF Negócios Imobiliários', d:'Portal de imóveis.', u:'https://afnegociosimobiliarios.lovable.app/', c:'negocios', i:'home'},
