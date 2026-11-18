@@ -122,7 +122,7 @@ Foto redonda de 64 px com borda amarela de 3 px. Ao lado, o nome em display 900 
 
 ### Linha de link
 
-- Título em display, descrição em DM Sans, número sequencial (01–17) e seta.
+- Título em display, descrição em DM Sans, número sequencial (01–18) e seta.
 - Divisória de 2 px em branco 25%.
 - **Hover/foco:** um fundo amarelo sobe de baixo para cima (0,35 s), o texto passa a `--s-ink`, a seta gira −45° e o ícone faz a sua animação.
 
@@ -164,7 +164,7 @@ Faixa amarela de largura total com palavras-chave em display 900, rolando contin
 
 Quem ativa "reduzir movimento" no sistema vê todas as animações desligadas.
 
-## 9. Inventário de conteúdo (17 links)
+## 9. Inventário de conteúdo (18 links)
 
 | # | Categoria | Item | Destino |
 | --- | --- | --- | --- |
@@ -176,15 +176,16 @@ Quem ativa "reduzir movimento" no sistema vê todas as animações desligadas.
 | 06 | Cursos | Fábrica de Apps com IA *(Em breve)* | pay.kiwify.com.br |
 | 07 | Cursos | E-commerce do Zero | pgecommercedozero.vercel.app |
 | 08 | Cursos | Curso de Impressão 3D | udemy.com |
-| 09 | Cursos | Engenharia das Apostas *(+18)* | engenhariadasapostas.online |
+| 09 | Cursos | Engenharia das Apostas *(+18)* | udemy.com |
 | 10 | Cursos | Meus livros | amazon.com.br |
-| 11 | Conteúdo | AF Negócios Digitais (podcast) | Spotify: **link pendente** |
-| 12 | Conteúdo | Diário de Torcedor (podcast) | Spotify: **link pendente** |
+| 11 | Conteúdo | AF Negócios Digitais (podcast) | open.spotify.com/show/0XF27GUj9u6JvelcvKYW3u |
+| 12 | Conteúdo | Diário de Torcedor (podcast) | open.spotify.com/show/72LFo8pFHjgRG3TjNarj41 |
 | 13 | Conteúdo | Blog Diário Torcedor | diariotorcedor.com.br |
 | 14 | Conteúdo | YouTube · E-commerce | youtube.com/@andrewsfranco8087 |
 | 15 | Conteúdo | YouTube · Jogos mobile | youtube.com/@reviewdoandrade2886 |
 | 16 | Lojas | Loja na Shopee | shopee.com.br |
 | 17 | Lojas | Loja de roupas na Reserva | reserva.ink |
+| 18 | Lojas | Loja de roupas na Redbubble | francooo94.redbubble.com |
 
 **Para adicionar um item:** inclua uma linha no array `L` do `page/index.html` com `t` (título), `d` (descrição), `u` (link), `c` (categoria), `i` (ícone) e, se precisar, `tag`. A numeração, as seções, os stories e o rodapé se atualizam sozinhos.
 

@@ -11,7 +11,7 @@ O guia visual completo está em [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md). 
 | `index.html` | Marcação da página |
 | `css/tokens.css` | Tokens: cores, fontes, raios, espaçamentos e movimento |
 | `css/stories.css` | Estilos e animações |
-| `js/data.js` | **Conteúdo**: categorias, os 17 links, ícones, faixa e rodapé |
+| `js/data.js` | **Conteúdo**: categorias, os 18 links, ícones, faixa e rodapé |
 | `js/app.js` | Renderização e visualizador de story |
 | `assets/` | Avatar e favicon |
 | `vercel.json` | Cabeçalhos de cache para a Vercel |
@@ -29,8 +29,6 @@ Edite o array `L` em [js/data.js](js/data.js):
 - `tag` é opcional.
 
 A numeração, as seções, os stories e o rodapé se atualizam sozinhos. Para colocar um link no rodapé, inclua o título dele em `FOOT`.
-
-**Pendente:** as URLs reais dos dois podcasts no Spotify. Hoje elas abrem a busca; estão marcadas com `TODO` em `js/data.js`.
 
 ## Rodar localmente
 

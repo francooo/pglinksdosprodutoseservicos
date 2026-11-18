@@ -47,7 +47,7 @@ const CATS = [
   {id:'lojas',    name:'Lojas',    ring:'bag',  bg:'var(--cat-lojas)'}
 ];
 
-/* Os 17 links */
+/* Os 18 links */
 const L = [
   // Negócios
   {t:'AF ecomm', d:'Transformando negócios com tecnologia: e-commerce do planejamento à operação.', u:'https://afnegociosdigitais.vercel.app/', c:'negocios', i:'cart'},
@@ -60,21 +60,20 @@ const L = [
   {t:'Fábrica de Apps com IA', d:'Aprenda a criar aplicativos usando inteligência artificial.', u:'https://pay.kiwify.com.br/qhMfSrt', c:'cursos', i:'spark', tag:'Em breve'},
   {t:'E-commerce do Zero', d:'Venha aprender a criar o seu e-commerce.', u:'https://pgecommercedozero.vercel.app/', c:'cursos', i:'store'},
   {t:'Curso de Impressão 3D', d:'Curso completo de impressão 3D na Udemy.', u:'https://www.udemy.com/course/curso-completo-de-impressao-3d/?referralCode=952497D062E46F1B9AB2', c:'cursos', i:'cube'},
-  {t:'Engenharia das Apostas', d:'Aprenda a fazer apostas esportivas.', u:'https://engenhariadasapostas.online/', c:'cursos', i:'ball', tag:'+18'},
+  {t:'Engenharia das Apostas', d:'Aprenda a fazer apostas esportivas.', u:'https://www.udemy.com/course/engenharia-de-resultados-esportivos/?referralCode=2ED6982A2CCB4C4CC635', c:'cursos', i:'ball', tag:'+18'},
   {t:'Meus livros', d:'Livros, biografia e lançamentos na Amazon.', u:'https://www.amazon.com.br/stores/author/B0H7TNJ82Q', c:'cursos', i:'book'},
 
   // Conteúdo
-  // TODO: trocar pela URL real do podcast no Spotify (hoje abre a busca)
-  {t:'AF Negócios Digitais', d:'Podcast sobre negócios digitais no Spotify.', u:'https://open.spotify.com/search/AF%20Negocios%20digitais/podcasts', c:'conteudo', i:'mic'},
-  // TODO: trocar pela URL real do podcast no Spotify (hoje abre a busca)
-  {t:'Diário de Torcedor', d:'Podcast de futebol no Spotify.', u:'https://open.spotify.com/search/Di%C3%A1rio%20de%20Torcedor/podcasts', c:'conteudo', i:'mic'},
+  {t:'AF Negócios Digitais', d:'Podcast sobre negócios digitais no Spotify.', u:'https://open.spotify.com/show/0XF27GUj9u6JvelcvKYW3u?si=5309bcad07e340e3', c:'conteudo', i:'mic'},
+  {t:'Diário de Torcedor', d:'Podcast de futebol no Spotify.', u:'https://open.spotify.com/show/72LFo8pFHjgRG3TjNarj41?si=a9e6be1c3eb1482b', c:'conteudo', i:'mic'},
   {t:'Blog Diário Torcedor', d:'Meu blog sobre esportes.', u:'https://diariotorcedor.com.br', c:'conteudo', i:'pen'},
   {t:'YouTube · E-commerce', d:'Meu canal sobre e-commerce.', u:'https://youtube.com/@andrewsfranco8087?sub_confirmation=1', c:'conteudo', i:'play'},
   {t:'YouTube · Jogos mobile', d:'Review do Andrade: meu canal de jogos mobile.', u:'https://www.youtube.com/@reviewdoandrade2886', c:'conteudo', i:'game'},
 
   // Lojas
   {t:'Loja na Shopee', d:'Produtos selecionados na minha loja Shopee.', u:'https://shopee.com.br/andrewsfranco341#product_list', c:'lojas', i:'bag'},
-  {t:'Loja de roupas na Reserva', d:'Minha loja de roupas na Reserva.', u:'https://reserva.ink/85719', c:'lojas', i:'shirt'}
+  {t:'Loja de roupas na Reserva', d:'Minha loja de roupas na Reserva.', u:'https://reserva.ink/85719', c:'lojas', i:'shirt'},
+  {t:'Loja de roupas na Redbubble', d:'Minha loja de roupas na Redbubble.', u:'https://francooo94.redbubble.com/', c:'lojas', i:'shirt'}
 ];
 
 /* Palavras da faixa amarela */
@@ -83,5 +82,5 @@ const MARQUEE = ['E-commerce','Apps com IA','Impressão 3D','Podcasts','Imóveis
 /* Colunas do rodapé: Canais e Lojas apontam para itens de L pelo título */
 const FOOT = [
   {h:'Canais', items:['YouTube · E-commerce','YouTube · Jogos mobile','AF Negócios Digitais','Blog Diário Torcedor','Meus livros']},
-  {h:'Lojas',  items:['Loja na Shopee','Loja de roupas na Reserva','AF ecomm']}
+  {h:'Lojas',  items:['Loja na Shopee','Loja de roupas na Reserva','Loja de roupas na Redbubble','AF ecomm']}
 ];
