@@ -82,7 +82,7 @@ Todos passam o nível AA de acessibilidade. Não use amarelo como cor de texto c
 
 ## 6. Ícones
 
-São 17 ícones de linha em grade de 24 × 24, com traço de 1,8, pontas arredondadas, sem preenchimento e cor `currentColor`.
+São 21 ícones de linha em grade de 24 × 24, com traço de 1,8, pontas arredondadas, sem preenchimento e cor `currentColor`.
 
 | Ícone | Uso | Animação no hover |
 | --- | --- | --- |
@@ -102,6 +102,10 @@ São 17 ícones de linha em grade de 24 × 24, com traço de 1,8, pontas arredon
 | `bag` | Loja na Shopee · categoria Lojas | balança |
 | `shirt` | Loja de roupas na Reserva | balança |
 | `arrow` | Seta de link, botões | gira −45° no hover |
+| `heart` | Gestão Saúde | pulsa |
+| `passport` | Passaporte do Futebol | vira como página |
+| `candle` | App Religioso | pulsa |
+| `building` | App Condo | sobe e desce |
 | `grid` | Reserva (uso livre) | — |
 
 ## 7. Componentes
@@ -122,7 +126,7 @@ Foto redonda de 64 px com borda amarela de 3 px. Ao lado, o nome em display 900 
 
 ### Linha de link
 
-- Título em display, descrição em DM Sans, número sequencial (01–18) e seta.
+- Título em display, descrição em DM Sans, número sequencial (01–22) e seta.
 - Divisória de 2 px em branco 25%.
 - **Hover/foco:** um fundo amarelo sobe de baixo para cima (0,35 s), o texto passa a `--s-ink`, a seta gira −45° e o ícone faz a sua animação.
 
@@ -164,7 +168,7 @@ Faixa amarela de largura total com palavras-chave em display 900, rolando contin
 
 Quem ativa "reduzir movimento" no sistema vê todas as animações desligadas.
 
-## 9. Inventário de conteúdo (18 links)
+## 9. Inventário de conteúdo (22 links)
 
 | # | Categoria | Item | Destino |
 | --- | --- | --- | --- |
@@ -173,19 +177,23 @@ Quem ativa "reduzir movimento" no sistema vê todas as animações desligadas.
 | 03 | Negócios | ConsultaPsi | pgconsultapsi.vercel.app |
 | 04 | Negócios | AF Negócios Imobiliários | afnegociosimobiliarios.lovable.app |
 | 05 | Negócios | 3D Max | suaminiatura3d.vercel.app |
-| 06 | Cursos | Fábrica de Apps com IA *(Em breve)* | pay.kiwify.com.br |
-| 07 | Cursos | E-commerce do Zero | pgecommercedozero.vercel.app |
-| 08 | Cursos | Curso de Impressão 3D | udemy.com |
-| 09 | Cursos | Engenharia das Apostas *(+18)* | udemy.com |
-| 10 | Cursos | Meus livros | amazon.com.br |
-| 11 | Conteúdo | AF Negócios Digitais (podcast) | open.spotify.com/show/0XF27GUj9u6JvelcvKYW3u |
-| 12 | Conteúdo | Diário de Torcedor (podcast) | open.spotify.com/show/72LFo8pFHjgRG3TjNarj41 |
-| 13 | Conteúdo | Blog Diário Torcedor | diariotorcedor.com.br |
-| 14 | Conteúdo | YouTube · E-commerce | youtube.com/@andrewsfranco8087 |
-| 15 | Conteúdo | YouTube · Jogos mobile | youtube.com/@reviewdoandrade2886 |
-| 16 | Lojas | Loja na Shopee | shopee.com.br |
-| 17 | Lojas | Loja de roupas na Reserva | reserva.ink |
-| 18 | Lojas | Loja de roupas na Redbubble | francooo94.redbubble.com |
+| 06 | Negócios | Gestão Saúde | pgappgestaosaude.vercel.app |
+| 07 | Negócios | Passaporte do Futebol | passaportedofutebol.vercel.app/login |
+| 08 | Negócios | App Religioso | appreligioso.vercel.app/entrar |
+| 09 | Negócios | App Condo | pgappcondo.vercel.app |
+| 10 | Cursos | Fábrica de Apps com IA *(Em breve)* | pay.kiwify.com.br |
+| 11 | Cursos | E-commerce do Zero | pgecommercedozero.vercel.app |
+| 12 | Cursos | Curso de Impressão 3D | udemy.com |
+| 13 | Cursos | Engenharia das Apostas *(+18)* | udemy.com |
+| 14 | Cursos | Meus livros | amazon.com.br |
+| 15 | Conteúdo | AF Negócios Digitais (podcast) | open.spotify.com/show/0XF27GUj9u6JvelcvKYW3u |
+| 16 | Conteúdo | Diário de Torcedor (podcast) | open.spotify.com/show/72LFo8pFHjgRG3TjNarj41 |
+| 17 | Conteúdo | Blog Diário Torcedor | diariotorcedor.com.br |
+| 18 | Conteúdo | YouTube · E-commerce | youtube.com/@andrewsfranco8087 |
+| 19 | Conteúdo | YouTube · Jogos mobile | youtube.com/@reviewdoandrade2886 |
+| 20 | Lojas | Loja na Shopee | shopee.com.br |
+| 21 | Lojas | Loja de roupas na Reserva | reserva.ink |
+| 22 | Lojas | Loja de roupas na Redbubble | francooo94.redbubble.com |
 
 **Para adicionar um item:** inclua uma linha no array `L` do `page/index.html` com `t` (título), `d` (descrição), `u` (link), `c` (categoria), `i` (ícone) e, se precisar, `tag`. A numeração, as seções, os stories e o rodapé se atualizam sozinhos.
 

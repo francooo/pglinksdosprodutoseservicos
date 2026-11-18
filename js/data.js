@@ -32,12 +32,16 @@ const I = {
   game:'<rect x="2" y="7" width="20" height="11" rx="5"/><path d="M7 11v3M5.5 12.5h3"/><circle cx="16" cy="11.5" r=".8"/><circle cx="18" cy="14" r=".8"/>',
   bag:'<path d="M5 8h14l-1 13H6z"/><path d="M9 8a3 3 0 0 1 6 0"/>',
   shirt:'<path d="M8 3L3 6l2 4 2-1v12h10V9l2 1 2-4-5-3a4 4 0 0 1-8 0z"/>',
+  heart:'<path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7a4.3 4.3 0 0 1 7.5 2.8C19.5 15.4 12 20 12 20z"/><path d="M7.5 12h2.3l1.2-2 2 4 1.2-2h2.3"/>',
+  passport:'<rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="10" r="3.5"/><path d="M8.5 10h7M12 6.5c1.3 1 1.3 6 0 7M12 6.5c-1.3 1-1.3 6 0 7M9 17h6"/>',
+  candle:'<path d="M9 11h6v10H9z"/><path d="M12 11V8"/><path d="M12 3c1.6 1.7 1.6 3.4 0 4.2-1.6-.8-1.6-2.5 0-4.2z"/><path d="M6 21h12"/>',
+  building:'<path d="M5 21V4h10v17"/><path d="M15 9h4v12"/><path d="M8 8h1M11 8h1M8 12h1M11 12h1M8 16h1M11 16h1"/><path d="M3 21h18"/>',
   arrow:'<path d="M5 12h14M13 6l6 6-6 6"/>',
   grid:'<rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/>'
 };
 
 /* Animação de cada ícone no hover / no story (keyframes em css/stories.css) */
-const FX = {cart:'fx-cart',badge:'fx-pulse',chat:'fx-pulse',home:'fx-rise',cube:'fx-cube',spark:'fx-spark',store:'fx-rise',ball:'fx-bounce',book:'fx-tilt',mic:'fx-pulse',pen:'fx-swing',play:'fx-pulse',game:'fx-swing',bag:'fx-swing',shirt:'fx-swing'};
+const FX = {cart:'fx-cart',badge:'fx-pulse',chat:'fx-pulse',home:'fx-rise',cube:'fx-cube',spark:'fx-spark',store:'fx-rise',ball:'fx-bounce',book:'fx-tilt',mic:'fx-pulse',pen:'fx-swing',play:'fx-pulse',game:'fx-swing',bag:'fx-swing',shirt:'fx-swing',heart:'fx-pulse',passport:'fx-tilt',candle:'fx-pulse',building:'fx-rise'};
 
 /* As quatro categorias, na ordem em que aparecem (círculos, seções e stories) */
 const CATS = [
@@ -47,7 +51,7 @@ const CATS = [
   {id:'lojas',    name:'Lojas',    ring:'bag',  bg:'var(--cat-lojas)'}
 ];
 
-/* Os 18 links */
+/* Os 22 links */
 const L = [
   // Negócios
   {t:'AF ecomm', d:'Transformando negócios com tecnologia: e-commerce do planejamento à operação.', u:'https://afnegociosdigitais.vercel.app/', c:'negocios', i:'cart'},
@@ -55,6 +59,10 @@ const L = [
   {t:'ConsultaPsi', d:'Gestão para clínicas de psicologia.', u:'https://pgconsultapsi.vercel.app/', c:'negocios', i:'chat'},
   {t:'AF Negócios Imobiliários', d:'Portal de imóveis.', u:'https://afnegociosimobiliarios.lovable.app/', c:'negocios', i:'home'},
   {t:'3D Max', d:'Transforme sua foto em uma miniatura 3D incrível.', u:'https://suaminiatura3d.vercel.app/', c:'negocios', i:'cube'},
+  {t:'Gestão Saúde', d:'App para organizar seus remédios e cuidar da sua saúde.', u:'https://pgappgestaosaude.vercel.app/', c:'negocios', i:'heart'},
+  {t:'Passaporte do Futebol', d:'Carimbe os estádios do mundo que você já visitou.', u:'https://passaportedofutebol.vercel.app/login', c:'negocios', i:'passport'},
+  {t:'App Religioso', d:'Sistema para acompanhar e organizar a sua vida de fé.', u:'https://appreligioso.vercel.app/entrar', c:'negocios', i:'candle'},
+  {t:'App Condo', d:'Agente que ajuda os moradores de qualquer condomínio.', u:'https://pgappcondo.vercel.app/', c:'negocios', i:'building'},
 
   // Cursos
   {t:'Fábrica de Apps com IA', d:'Aprenda a criar aplicativos usando inteligência artificial.', u:'https://pay.kiwify.com.br/qhMfSrt', c:'cursos', i:'spark', tag:'Em breve'},

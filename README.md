@@ -11,7 +11,7 @@ O guia visual completo está em [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md). 
 | `index.html` | Marcação da página |
 | `css/tokens.css` | Tokens: cores, fontes, raios, espaçamentos e movimento |
 | `css/stories.css` | Estilos e animações |
-| `js/data.js` | **Conteúdo**: categorias, os 18 links, ícones, faixa e rodapé |
+| `js/data.js` | **Conteúdo**: categorias, os 22 links, ícones, faixa e rodapé |
 | `js/app.js` | Renderização e visualizador de story |
 | `assets/` | Avatar e favicon |
 | `vercel.json` | Cabeçalhos de cache para a Vercel |
