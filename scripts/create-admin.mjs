@@ -3,7 +3,7 @@
 //      npm run create-admin -- --delete email@x  (remove um usuário)
 import { createInterface } from 'node:readline/promises';
 import { neon } from '@neondatabase/serverless';
-import { hashPassword } from '../api/_lib/auth.js';
+import { hashPassword } from '../admin-app/api/_lib/auth.js';
 
 const url = process.env.DATABASE_URL;
 if (!url) { console.error('Defina DATABASE_URL no .env'); process.exit(1); }

@@ -3,9 +3,9 @@
 //   POST /api/admin/links                    — cria  {title, description, url, category, icon, tag?, footer?, visible?}
 //   PUT  /api/admin/links?id=<id>            — altera os campos enviados
 //   POST /api/admin/links?action=reorder     — {category, ids:[...]} na nova ordem
-import { db, CATEGORIES } from '../_lib/db.js';
-import { send, query, readJson, handler, httpError } from '../_lib/http.js';
-import { requireAdmin } from '../_lib/auth.js';
+import { db, CATEGORIES } from './_lib/db.js';
+import { send, query, readJson, handler, httpError } from './_lib/http.js';
+import { requireAdmin } from './_lib/auth.js';
 
 export const ICONS = ['cart', 'badge', 'chat', 'home', 'cube', 'spark', 'store', 'ball', 'book', 'mic', 'pen', 'play',
   'game', 'bag', 'shirt', 'heart', 'passport', 'candle', 'building', 'grid'];

@@ -1,5 +1,6 @@
 .env
 .env.*
+admin-app/
 scripts/
 db/
 *.zip

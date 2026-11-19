@@ -1,7 +1,7 @@
 // GET /api/admin/stats?from=AAAA-MM-DD&to=AAAA-MM-DD — números do painel.
-import { db, CATEGORIES } from '../_lib/db.js';
-import { send, query, handler, dateRange, RANGE_SQL } from '../_lib/http.js';
-import { requireAdmin } from '../_lib/auth.js';
+import { db, CATEGORIES } from './_lib/db.js';
+import { send, query, handler, dateRange, RANGE_SQL } from './_lib/http.js';
+import { requireAdmin } from './_lib/auth.js';
 
 const TZ = `'America/Sao_Paulo'`;
 const CLICK = `type IN ('click','story_cta')`;

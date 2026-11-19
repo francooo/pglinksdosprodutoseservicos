@@ -1,12 +1,14 @@
-// Servidor local para testar a página, o admin e as rotas /api sem precisar da Vercel.
-// Uso: npm run dev   →  http://localhost:3000  e  http://localhost:3000/admin
+// Servidor local que imita a Vercel (arquivos estáticos + rotas /api) para um dos dois projetos.
+// Uso: npm run dev        → página pública em http://localhost:3000
+//      npm run dev:admin  → admin em http://localhost:3001
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
-import { extname, join, normalize } from 'node:path';
+import { extname, join, normalize, resolve, sep } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
-const root = fileURLToPath(new URL('..', import.meta.url));
-const port = +process.env.PORT || 3000;
+const repo = fileURLToPath(new URL('..', import.meta.url));
+const root = resolve(repo, process.argv[2] || '.') + sep;
+const port = +(process.argv[3] || process.env.PORT || 3000);
 const types = {
   '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
   '.json': 'application/json', '.svg': 'image/svg+xml', '.jpg': 'image/jpeg', '.png': 'image/png', '.ico': 'image/x-icon'
@@ -36,4 +38,4 @@ createServer(async (req, res) => {
       res.end(e.code === 'ENOENT' ? 'Não encontrado' : 'Erro');
     }
   }
-}).listen(port, () => console.log(`http://localhost:${port}  ·  admin: http://localhost:${port}/admin`));
+}).listen(port, () => console.log(`${root} → http://localhost:${port}`));

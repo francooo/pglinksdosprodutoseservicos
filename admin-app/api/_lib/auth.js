@@ -83,6 +83,14 @@ export function requireAdmin(req, res) {
   return session;
 }
 
+/** Endereço da página pública (variável opcional PUBLIC_SITE_URL), ou null. */
+export function publicSite() {
+  try {
+    const u = new URL(process.env.PUBLIC_SITE_URL || '');
+    return u.protocol === 'https:' || u.hostname === 'localhost' ? u.origin : null;
+  } catch { return null; }
+}
+
 /** Proteção extra contra CSRF: se houver Origin, precisa ser o mesmo host. */
 export function checkOrigin(req) {
   const origin = req.headers.origin;

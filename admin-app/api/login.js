@@ -1,7 +1,7 @@
 // POST /api/admin/login — {email, password} → cookie de sessão.
-import { db } from '../_lib/db.js';
-import { send, readJson, handler } from '../_lib/http.js';
-import { verifyPassword, setSession, checkOrigin } from '../_lib/auth.js';
+import { db } from './_lib/db.js';
+import { send, readJson, handler } from './_lib/http.js';
+import { verifyPassword, setSession, checkOrigin, publicSite } from './_lib/auth.js';
 
 const MAX_FAILS = 5;          // tentativas erradas…
 const WINDOW_MIN = 15;        // …dentro desta janela bloqueiam o e-mail
@@ -30,5 +30,5 @@ export default handler(['POST'], async (req, res) => {
     return send(res, 401, { error: 'E-mail ou senha incorretos' });
   }
   setSession(res, admin);
-  send(res, 200, { email: admin.email });
+  send(res, 200, { email: admin.email, site: publicSite() });
 });

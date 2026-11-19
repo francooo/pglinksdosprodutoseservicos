@@ -4,7 +4,9 @@
   "type": "module",
   "engines": { "node": ">=20" },
   "scripts": {
-    "dev": "node --env-file=.env scripts/dev.mjs",
+    "dev": "node --env-file=.env scripts/dev.mjs . 3000",
+    "dev:admin": "node --env-file=.env scripts/dev.mjs admin-app 3001",
+    "sync-admin": "node scripts/sync-admin.mjs",
     "db:migrate": "node --env-file=.env scripts/migrate.mjs",
     "db:seed": "node --env-file=.env scripts/seed-links.mjs",
     "create-admin": "node --env-file=.env scripts/create-admin.mjs"

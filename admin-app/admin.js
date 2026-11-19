@@ -50,9 +50,17 @@
     $('#v-app').hidden = true; $('#v-login').hidden = false;
     setTimeout(() => $('#f-login [name=email]').focus(), 0);
   }
-  function showApp(email) {
+  function showApp(email, site) {
     $('#v-login').hidden = true; $('#v-app').hidden = false;
     $('#who').textContent = email;
+    // Endereço da página pública (variável PUBLIC_SITE_URL do projeto do admin na Vercel).
+    if (site) {
+      const base = site.replace(/\/+$/, '');
+      $('#site-link').href = base + '/'; $('#site-link').hidden = false;
+      $('#notrack-on').href = base + '/?notrack=1';
+      $('#notrack-off').href = base + '/?notrack=0';
+      $('#notrack').hidden = false;
+    }
     setPreset(7);
   }
 
@@ -61,15 +69,15 @@
     const f = e.target, btn = f.querySelector('button');
     $('#login-msg').textContent = ''; btn.disabled = true;
     try {
-      const d = await api('/api/admin/login', { method: 'POST', body: JSON.stringify({ email: f.email.value, password: f.password.value }) });
+      const d = await api('/api/login', { method: 'POST', body: JSON.stringify({ email: f.email.value, password: f.password.value }) });
       f.password.value = '';
-      showApp(d.email);
+      showApp(d.email, d.site);
     } catch (err) { $('#login-msg').textContent = err.message; }
     btn.disabled = false;
   });
 
   $('#logout').addEventListener('click', async () => {
-    try { await api('/api/admin/logout', { method: 'POST' }); } catch {}
+    try { await api('/api/logout', { method: 'POST' }); } catch {}
     state.stats = state.links = null;
     showLogin();
   });
@@ -96,7 +104,7 @@
     syncInputs(); load();
   }));
   $$('[data-export]').forEach(b => b.addEventListener('click', () => {
-    location.href = `/api/admin/export?type=${b.dataset.export}&from=${state.from}&to=${state.to}`;
+    location.href = `/api/export?type=${b.dataset.export}&from=${state.from}&to=${state.to}`;
   }));
 
   /* ---------------- Abas ---------------- */
@@ -115,7 +123,7 @@
   async function load() {
     const seq = ++loadSeq;
     try {
-      const s = await api(`/api/admin/stats?from=${state.from}&to=${state.to}`);
+      const s = await api(`/api/stats?from=${state.from}&to=${state.to}`);
       if (seq !== loadSeq) return;
       state.stats = s;
       renderOverview(); renderLinks(); renderDims(); renderStories();
@@ -240,7 +248,7 @@
   async function loadVisitors() {
     $('#t-visitors').innerHTML = '<tbody><tr><td class="muted">Carregando…</td></tr></tbody>';
     try {
-      const d = await api(`/api/admin/visitors?from=${state.from}&to=${state.to}`);
+      const d = await api(`/api/visitors?from=${state.from}&to=${state.to}`);
       if (!d.visitors.length) { $('#t-visitors').innerHTML = '<tbody><tr><td class="empty">Nenhum visitante no período.</td></tr></tbody>'; return; }
       $('#t-visitors').innerHTML = `<thead><tr><th>Visitante</th><th></th><th>Última visita</th><th class="n">Sessões</th><th class="n">Acessos</th>
         <th class="n">Cliques</th><th class="n">Stories</th><th>Origem</th><th>Dispositivo</th><th>Local</th></tr></thead>
@@ -261,7 +269,7 @@
     $('#m-visitor-title').textContent = `Visitante ${id.slice(0, 8)}`;
     $('#visitor-body').innerHTML = '<p class="muted">Carregando…</p>';
     try {
-      const { events } = await api(`/api/admin/visitors?id=${id}`);
+      const { events } = await api(`/api/visitors?id=${id}`);
       if (!events.length) { $('#visitor-body').innerHTML = '<p class="empty">Sem eventos.</p>'; return; }
       const last = events[0];
       const describe = e => {
@@ -290,7 +298,7 @@
   /* ---------------- Gerenciar links ---------------- */
   async function loadLinks() {
     try {
-      const d = await api('/api/admin/links');
+      const d = await api('/api/links');
       state.links = d.links; state.icons = d.icons;
       renderManager();
     } catch (err) { if (err.message !== 'Sessão expirada') toast(err.message); }
@@ -324,11 +332,11 @@
         const i = ls.indexOf(link), j = i + +mv.dataset.move;
         if (j < 0 || j >= ls.length) return;
         [ls[i], ls[j]] = [ls[j], ls[i]];
-        await api('/api/admin/links?action=reorder', { method: 'POST', body: JSON.stringify({ category: link.category, ids: ls.map(l => l.id) }) });
+        await api('/api/links?action=reorder', { method: 'POST', body: JSON.stringify({ category: link.category, ids: ls.map(l => l.id) }) });
         await loadLinks(); toast('Ordem atualizada');
       } else if (tg) {
         const link = state.links.find(l => l.id === tg.dataset.toggle);
-        await api(`/api/admin/links?id=${encodeURIComponent(link.id)}`, { method: 'PUT', body: JSON.stringify({ visible: !link.visible }) });
+        await api(`/api/links?id=${encodeURIComponent(link.id)}`, { method: 'PUT', body: JSON.stringify({ visible: !link.visible }) });
         await loadLinks(); toast(link.visible ? 'Link ocultado' : 'Link visível de novo');
       } else if (ed) {
         openLinkForm(state.links.find(l => l.id === ed.dataset.edit));
@@ -367,21 +375,13 @@
     };
     $('#link-msg').textContent = ''; btn.disabled = true;
     try {
-      if (state.editing) await api(`/api/admin/links?id=${encodeURIComponent(state.editing.id)}`, { method: 'PUT', body: JSON.stringify(body) });
-      else await api('/api/admin/links', { method: 'POST', body: JSON.stringify(body) });
+      if (state.editing) await api(`/api/links?id=${encodeURIComponent(state.editing.id)}`, { method: 'PUT', body: JSON.stringify(body) });
+      else await api('/api/links', { method: 'POST', body: JSON.stringify(body) });
       closeModal('#m-link');
       await loadLinks(); load();
       toast(state.editing ? 'Link atualizado' : 'Link criado');
     } catch (err) { $('#link-msg').textContent = err.message; }
     btn.disabled = false;
-  });
-
-  // "Não contar meus acessos neste navegador" (lido por js/track.js na página pública)
-  const nt = $('#notrack');
-  try { nt.checked = localStorage.getItem('af_notrack') === '1'; } catch {}
-  nt.addEventListener('change', () => {
-    try { nt.checked ? localStorage.setItem('af_notrack', '1') : localStorage.removeItem('af_notrack'); toast(nt.checked ? 'Seus acessos não serão contados neste navegador' : 'Seus acessos voltarão a ser contados'); }
-    catch { toast('Não foi possível salvar a preferência neste navegador'); }
   });
 
   /* ---------------- Modais ---------------- */
@@ -398,5 +398,5 @@
   });
 
   /* ---------------- Início ---------------- */
-  api('/api/admin/me').then(d => showApp(d.email)).catch(() => showLogin());
+  api('/api/me').then(d => showApp(d.email, d.site)).catch(() => showLogin());
 })();

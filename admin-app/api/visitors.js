@@ -1,8 +1,8 @@
 // GET /api/admin/visitors?from&to          — visitantes do período (mais recentes primeiro)
 // GET /api/admin/visitors?id=<uuid>        — jornada completa de um visitante
-import { db } from '../_lib/db.js';
-import { send, query, handler, dateRange, RANGE_SQL } from '../_lib/http.js';
-import { requireAdmin } from '../_lib/auth.js';
+import { db } from './_lib/db.js';
+import { send, query, handler, dateRange, RANGE_SQL } from './_lib/http.js';
+import { requireAdmin } from './_lib/auth.js';
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 

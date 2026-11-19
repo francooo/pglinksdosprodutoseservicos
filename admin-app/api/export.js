@@ -1,7 +1,7 @@
 // GET /api/admin/export?type=events|links&from&to — CSV (separador ; e BOM, para abrir certo no Excel em português).
-import { db, CATEGORIES } from '../_lib/db.js';
-import { sendText, query, handler, dateRange, RANGE_SQL } from '../_lib/http.js';
-import { requireAdmin } from '../_lib/auth.js';
+import { db, CATEGORIES } from './_lib/db.js';
+import { sendText, query, handler, dateRange, RANGE_SQL } from './_lib/http.js';
+import { requireAdmin } from './_lib/auth.js';
 
 const TZ = `'America/Sao_Paulo'`;
 

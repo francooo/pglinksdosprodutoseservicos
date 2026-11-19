@@ -2,6 +2,10 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "regions": ["gru1"],
+  "redirects": [
+    { "source": "/admin-app/:path*", "destination": "/", "permanent": false },
+    { "source": "/(scripts|db|docs)/:path*", "destination": "/", "permanent": false }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
@@ -10,21 +14,6 @@
     {
       "source": "/(css|js)/(.*)",
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }]
-    },
-    {
-      "source": "/admin(.*)",
-      "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
-        { "key": "Cache-Control", "value": "no-store" },
-        { "key": "X-Frame-Options", "value": "DENY" }
-      ]
-    },
-    {
-      "source": "/api/admin/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "no-store" },
-        { "key": "X-Robots-Tag", "value": "noindex" }
-      ]
     },
     {
       "source": "/(.*)",
