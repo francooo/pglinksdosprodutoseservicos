@@ -1,0 +1,5 @@
+.env
+.env.*
+scripts/
+db/
+*.zip

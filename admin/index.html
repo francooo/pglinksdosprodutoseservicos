@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin · Andrews Franco</title>
+<meta name="theme-color" content="#1a2ef0">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="/css/tokens.css?v=3">
+<link rel="stylesheet" href="/admin/admin.css?v=1">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+<script src="/js/data.js?v=3" defer></script>
+<script src="/admin/admin.js?v=1" defer></script>
+</head>
+<body>
+
+<!-- Login -->
+<section class="login" id="v-login" hidden>
+  <form id="f-login" autocomplete="on">
+    <div class="who">
+      <img src="/assets/avatar-andrews-franco.jpg" alt="" width="52" height="52">
+      <div><h1 class="display">Admin</h1><p>Acessos, cliques e links da sua página.</p></div>
+    </div>
+    <label>E-mail<input type="email" name="email" autocomplete="username" required></label>
+    <label>Senha<input type="password" name="password" autocomplete="current-password" required></label>
+    <button class="btn primary" type="submit">Entrar</button>
+    <div class="msg err" id="login-msg" role="alert"></div>
+  </form>
+</section>
+
+<!-- App -->
+<div id="v-app" hidden>
+  <header class="top">
+    <div class="top-in">
+      <div class="brand">
+        <img src="/assets/avatar-andrews-franco.jpg" alt="" width="44" height="44">
+        <div><h1 class="display">Admin</h1><small>Andrews Franco · página de links</small></div>
+        <span class="sp"></span>
+        <span class="user" id="who"></span>
+        <a class="btn small ghost" href="/" target="_blank" rel="noopener">Ver página</a>
+        <button class="btn small ghost" type="button" id="logout">Sair</button>
+      </div>
+      <nav class="tabs" role="tablist">
+        <button role="tab" data-tab="overview" aria-selected="true">Visão geral</button>
+        <button role="tab" data-tab="links" aria-selected="false">Links</button>
+        <button role="tab" data-tab="sources" aria-selected="false">Origem</button>
+        <button role="tab" data-tab="stories" aria-selected="false">Stories</button>
+        <button role="tab" data-tab="visitors" aria-selected="false">Visitantes</button>
+        <button role="tab" data-tab="manage" aria-selected="false">Gerenciar links</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="bar" id="period-bar">
+      <div class="seg" id="presets">
+        <button type="button" data-days="1">Hoje</button>
+        <button type="button" data-days="7" aria-pressed="true">7 dias</button>
+        <button type="button" data-days="30">30 dias</button>
+        <button type="button" data-days="90">90 dias</button>
+      </div>
+      <div class="custom">
+        <input type="date" id="from" aria-label="De">
+        <span class="muted">até</span>
+        <input type="date" id="to" aria-label="Até">
+      </div>
+      <span class="range" id="range-label"></span>
+      <span class="sp"></span>
+      <button class="btn small ghost" type="button" data-export="links">CSV por link</button>
+      <button class="btn small ghost" type="button" data-export="events">CSV de eventos</button>
+    </div>
+
+    <!-- Visão geral -->
+    <section data-panel="overview">
+      <div class="grid kpis" id="kpis"></div>
+      <div class="grid cols-2" style="margin-top:16px">
+        <div class="card" style="grid-column:1/-1">
+          <h2>Acessos e cliques por dia</h2>
+          <div class="chart"><canvas id="chart-daily" aria-label="Gráfico de acessos e cliques por dia"></canvas></div>
+        </div>
+        <div class="card"><h2>Cliques por categoria</h2><div class="hbars" id="cat-bars"></div></div>
+        <div class="card"><h2>Links mais clicados</h2><div id="top-links"></div></div>
+      </div>
+    </section>
+
+    <!-- Links -->
+    <section data-panel="links" hidden>
+      <div class="card">
+        <h2>Cliques por link</h2>
+        <p class="hint">Taxa = cliques ÷ acessos da página no período. "Story" são os cliques no botão Acessar dos stories.</p>
+        <div class="tbl-wrap"><table id="t-links"></table></div>
+      </div>
+    </section>
+
+    <!-- Origem -->
+    <section data-panel="sources" hidden>
+      <div class="grid cols-3" id="dims"></div>
+    </section>
+
+    <!-- Stories -->
+    <section data-panel="stories" hidden>
+      <p class="hint muted" style="margin:0 0 14px">Retenção: quantas sessões chegaram a cada story da categoria, em relação ao primeiro.</p>
+      <div class="grid cols-2" id="story-cards"></div>
+    </section>
+
+    <!-- Visitantes -->
+    <section data-panel="visitors" hidden>
+      <div class="card">
+        <h2>Visitantes</h2>
+        <p class="hint">Cada visitante é um ID anônimo do navegador. Clique numa linha para ver a jornada completa.</p>
+        <div class="tbl-wrap"><table id="t-visitors"></table></div>
+      </div>
+    </section>
+
+    <!-- Gerenciar links -->
+    <section data-panel="manage" hidden>
+      <div class="mgr-head">
+        <p>As mudanças aparecem na página pública em até 1 minuto. Links ocultos saem da página, mas o histórico de cliques continua.</p>
+        <label class="check"><input type="checkbox" id="notrack"> Não contar meus acessos neste navegador</label>
+        <button class="btn primary" type="button" id="new-link">+ Novo link</button>
+      </div>
+      <div id="mgr"></div>
+    </section>
+  </main>
+</div>
+
+<!-- Modal: formulário de link -->
+<div class="modal" id="m-link" hidden>
+  <div class="box" role="dialog" aria-modal="true" aria-labelledby="m-link-title">
+    <h2><span id="m-link-title">Novo link</span><button class="x" type="button" data-close aria-label="Fechar">×</button></h2>
+    <form class="form" id="f-link">
+      <label>Título (até 5 palavras)<input type="text" name="title" maxlength="60" required></label>
+      <label>Descrição (uma linha)<input type="text" name="description" maxlength="140"></label>
+      <label>URL<input type="url" name="url" placeholder="https://" required></label>
+      <div class="two">
+        <label>Categoria<select name="category" required></select></label>
+        <label>Rodapé<select name="footer">
+          <option value="">Não aparece no rodapé</option>
+          <option value="canais">Coluna Canais</option>
+          <option value="lojas">Coluna Lojas</option>
+        </select></label>
+      </div>
+      <div class="two">
+        <label>Tag (opcional)<input type="text" name="tag" maxlength="14" placeholder="Em breve, +18…"></label>
+        <label class="check" style="align-self:end;padding-bottom:10px"><input type="checkbox" name="visible" checked> Visível na página</label>
+      </div>
+      <div><label>Ícone</label><div class="icons" id="icon-pick" style="margin-top:6px"></div></div>
+      <div class="foot"><span class="msg err" id="link-msg" role="alert"></span>
+        <button class="btn ghost" type="button" data-close>Cancelar</button>
+        <button class="btn primary" type="submit">Salvar</button></div>
+    </form>
+  </div>
+</div>
+
+<!-- Modal: jornada do visitante -->
+<div class="modal" id="m-visitor" hidden>
+  <div class="box wide" role="dialog" aria-modal="true" aria-labelledby="m-visitor-title">
+    <h2><span id="m-visitor-title">Visitante</span><button class="x" type="button" data-close aria-label="Fechar">×</button></h2>
+    <div id="visitor-body"></div>
+  </div>
+</div>
+
+</body>
+</html>

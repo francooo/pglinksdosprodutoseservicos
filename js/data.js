@@ -1,6 +1,7 @@
 /* Andrews Franco · Stories — dados da página
  *
  * Para adicionar um link, inclua um objeto no array L:
+ *   id  identificador estável (slug, sem acento); não mude depois de publicado
  *   t   título (curto, até 5 palavras; aparece em caixa alta)
  *   d   descrição de uma linha
  *   u   URL de destino (abre em nova aba)
@@ -54,34 +55,34 @@ const CATS = [
 /* Os 22 links */
 const L = [
   // Negócios
-  {t:'AF ecomm', d:'Transformando negócios com tecnologia: e-commerce do planejamento à operação.', u:'https://afnegociosdigitais.vercel.app/', c:'negocios', i:'cart'},
-  {t:'Linx · AF ecomm credenciada', d:'Parceria oficial com a Linx Commerce para a sua loja.', u:'https://lp.linxcommerce.com.br/lp-parcerias-afecomm', c:'negocios', i:'badge'},
-  {t:'ConsultaPsi', d:'Gestão para clínicas de psicologia.', u:'https://pgconsultapsi.vercel.app/', c:'negocios', i:'chat'},
-  {t:'AF Negócios Imobiliários', d:'Portal de imóveis.', u:'https://afnegociosimobiliarios.lovable.app/', c:'negocios', i:'home'},
-  {t:'3D Max', d:'Transforme sua foto em uma miniatura 3D incrível.', u:'https://suaminiatura3d.vercel.app/', c:'negocios', i:'cube'},
-  {t:'Gestão Saúde', d:'App para organizar seus remédios e cuidar da sua saúde.', u:'https://pgappgestaosaude.vercel.app/', c:'negocios', i:'heart'},
-  {t:'Passaporte do Futebol', d:'Carimbe os estádios do mundo que você já visitou.', u:'https://passaportedofutebol.vercel.app/login', c:'negocios', i:'passport'},
-  {t:'App Religioso', d:'Sistema para acompanhar e organizar a sua vida de fé.', u:'https://appreligioso.vercel.app/entrar', c:'negocios', i:'candle'},
-  {t:'App Condo', d:'Agente que ajuda os moradores de qualquer condomínio.', u:'https://pgappcondo.vercel.app/', c:'negocios', i:'building'},
+  {id:'af-ecomm', t:'AF ecomm', d:'Transformando negócios com tecnologia: e-commerce do planejamento à operação.', u:'https://afnegociosdigitais.vercel.app/', c:'negocios', i:'cart'},
+  {id:'linx-af-ecomm', t:'Linx · AF ecomm credenciada', d:'Parceria oficial com a Linx Commerce para a sua loja.', u:'https://lp.linxcommerce.com.br/lp-parcerias-afecomm', c:'negocios', i:'badge'},
+  {id:'consultapsi', t:'ConsultaPsi', d:'Gestão para clínicas de psicologia.', u:'https://pgconsultapsi.vercel.app/', c:'negocios', i:'chat'},
+  {id:'af-negocios-imobiliarios', t:'AF Negócios Imobiliários', d:'Portal de imóveis.', u:'https://afnegociosimobiliarios.lovable.app/', c:'negocios', i:'home'},
+  {id:'3d-max', t:'3D Max', d:'Transforme sua foto em uma miniatura 3D incrível.', u:'https://suaminiatura3d.vercel.app/', c:'negocios', i:'cube'},
+  {id:'gestao-saude', t:'Gestão Saúde', d:'App para organizar seus remédios e cuidar da sua saúde.', u:'https://pgappgestaosaude.vercel.app/', c:'negocios', i:'heart'},
+  {id:'passaporte-do-futebol', t:'Passaporte do Futebol', d:'Carimbe os estádios do mundo que você já visitou.', u:'https://passaportedofutebol.vercel.app/login', c:'negocios', i:'passport'},
+  {id:'app-religioso', t:'App Religioso', d:'Sistema para acompanhar e organizar a sua vida de fé.', u:'https://appreligioso.vercel.app/entrar', c:'negocios', i:'candle'},
+  {id:'app-condo', t:'App Condo', d:'Agente que ajuda os moradores de qualquer condomínio.', u:'https://pgappcondo.vercel.app/', c:'negocios', i:'building'},
 
   // Cursos
-  {t:'Fábrica de Apps com IA', d:'Aprenda a criar aplicativos usando inteligência artificial.', u:'https://pay.kiwify.com.br/qhMfSrt', c:'cursos', i:'spark', tag:'Em breve'},
-  {t:'E-commerce do Zero', d:'Venha aprender a criar o seu e-commerce.', u:'https://pgecommercedozero.vercel.app/', c:'cursos', i:'store'},
-  {t:'Curso de Impressão 3D', d:'Curso completo de impressão 3D na Udemy.', u:'https://www.udemy.com/course/curso-completo-de-impressao-3d/?referralCode=952497D062E46F1B9AB2', c:'cursos', i:'cube'},
-  {t:'Engenharia das Apostas', d:'Aprenda a fazer apostas esportivas.', u:'https://www.udemy.com/course/engenharia-de-resultados-esportivos/?referralCode=2ED6982A2CCB4C4CC635', c:'cursos', i:'ball', tag:'+18'},
-  {t:'Meus livros', d:'Livros, biografia e lançamentos na Amazon.', u:'https://www.amazon.com.br/stores/author/B0H7TNJ82Q', c:'cursos', i:'book'},
+  {id:'fabrica-de-apps-com-ia', t:'Fábrica de Apps com IA', d:'Aprenda a criar aplicativos usando inteligência artificial.', u:'https://pay.kiwify.com.br/qhMfSrt', c:'cursos', i:'spark', tag:'Em breve'},
+  {id:'ecommerce-do-zero', t:'E-commerce do Zero', d:'Venha aprender a criar o seu e-commerce.', u:'https://pgecommercedozero.vercel.app/', c:'cursos', i:'store'},
+  {id:'curso-impressao-3d', t:'Curso de Impressão 3D', d:'Curso completo de impressão 3D na Udemy.', u:'https://www.udemy.com/course/curso-completo-de-impressao-3d/?referralCode=952497D062E46F1B9AB2', c:'cursos', i:'cube'},
+  {id:'engenharia-das-apostas', t:'Engenharia das Apostas', d:'Aprenda a fazer apostas esportivas.', u:'https://www.udemy.com/course/engenharia-de-resultados-esportivos/?referralCode=2ED6982A2CCB4C4CC635', c:'cursos', i:'ball', tag:'+18'},
+  {id:'meus-livros', t:'Meus livros', d:'Livros, biografia e lançamentos na Amazon.', u:'https://www.amazon.com.br/stores/author/B0H7TNJ82Q', c:'cursos', i:'book'},
 
   // Conteúdo
-  {t:'AF Negócios Digitais', d:'Podcast sobre negócios digitais no Spotify.', u:'https://open.spotify.com/show/0XF27GUj9u6JvelcvKYW3u?si=5309bcad07e340e3', c:'conteudo', i:'mic'},
-  {t:'Diário de Torcedor', d:'Podcast de futebol no Spotify.', u:'https://open.spotify.com/show/72LFo8pFHjgRG3TjNarj41?si=a9e6be1c3eb1482b', c:'conteudo', i:'mic'},
-  {t:'Blog Diário Torcedor', d:'Meu blog sobre esportes.', u:'https://diariotorcedor.com.br', c:'conteudo', i:'pen'},
-  {t:'YouTube · E-commerce', d:'Meu canal sobre e-commerce.', u:'https://youtube.com/@andrewsfranco8087?sub_confirmation=1', c:'conteudo', i:'play'},
-  {t:'YouTube · Jogos mobile', d:'Review do Andrade: meu canal de jogos mobile.', u:'https://www.youtube.com/@reviewdoandrade2886', c:'conteudo', i:'game'},
+  {id:'podcast-af-negocios-digitais', t:'AF Negócios Digitais', d:'Podcast sobre negócios digitais no Spotify.', u:'https://open.spotify.com/show/0XF27GUj9u6JvelcvKYW3u?si=5309bcad07e340e3', c:'conteudo', i:'mic'},
+  {id:'podcast-diario-de-torcedor', t:'Diário de Torcedor', d:'Podcast de futebol no Spotify.', u:'https://open.spotify.com/show/72LFo8pFHjgRG3TjNarj41?si=a9e6be1c3eb1482b', c:'conteudo', i:'mic'},
+  {id:'blog-diario-torcedor', t:'Blog Diário Torcedor', d:'Meu blog sobre esportes.', u:'https://diariotorcedor.com.br', c:'conteudo', i:'pen'},
+  {id:'youtube-ecommerce', t:'YouTube · E-commerce', d:'Meu canal sobre e-commerce.', u:'https://youtube.com/@andrewsfranco8087?sub_confirmation=1', c:'conteudo', i:'play'},
+  {id:'youtube-jogos-mobile', t:'YouTube · Jogos mobile', d:'Review do Andrade: meu canal de jogos mobile.', u:'https://www.youtube.com/@reviewdoandrade2886', c:'conteudo', i:'game'},
 
   // Lojas
-  {t:'Loja na Shopee', d:'Produtos selecionados na minha loja Shopee.', u:'https://shopee.com.br/andrewsfranco341#product_list', c:'lojas', i:'bag'},
-  {t:'Loja de roupas na Reserva', d:'Minha loja de roupas na Reserva.', u:'https://reserva.ink/85719', c:'lojas', i:'shirt'},
-  {t:'Loja de roupas na Redbubble', d:'Minha loja de roupas na Redbubble.', u:'https://francooo94.redbubble.com/', c:'lojas', i:'shirt'}
+  {id:'loja-shopee', t:'Loja na Shopee', d:'Produtos selecionados na minha loja Shopee.', u:'https://shopee.com.br/andrewsfranco341#product_list', c:'lojas', i:'bag'},
+  {id:'loja-reserva', t:'Loja de roupas na Reserva', d:'Minha loja de roupas na Reserva.', u:'https://reserva.ink/85719', c:'lojas', i:'shirt'},
+  {id:'loja-redbubble', t:'Loja de roupas na Redbubble', d:'Minha loja de roupas na Redbubble.', u:'https://francooo94.redbubble.com/', c:'lojas', i:'shirt'}
 ];
 
 /* Palavras da faixa amarela */

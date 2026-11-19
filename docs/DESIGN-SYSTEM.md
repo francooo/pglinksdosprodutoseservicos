@@ -195,7 +195,7 @@ Quem ativa "reduzir movimento" no sistema vê todas as animações desligadas.
 | 21 | Lojas | Loja de roupas na Reserva | reserva.ink |
 | 22 | Lojas | Loja de roupas na Redbubble | francooo94.redbubble.com |
 
-**Para adicionar um item:** inclua uma linha no array `L` do `page/index.html` com `t` (título), `d` (descrição), `u` (link), `c` (categoria), `i` (ícone) e, se precisar, `tag`. A numeração, as seções, os stories e o rodapé se atualizam sozinhos.
+**Para adicionar um item:** use o admin (`/admin` → **Gerenciar links**). A numeração, as seções, os stories e o rodapé se atualizam sozinhos. O array `L` de `js/data.js` é só a lista reserva, usada quando a API está fora do ar.
 
 ## 10. Regras rápidas
 
